@@ -1,0 +1,105 @@
+main .shimmer-card {
+    --shimmer-color: hsl(0, 0%, 78%);
+}
+
+main.dark .shimmer-card {
+    --shimmer-color: hsl(208, 21%, 34%);
+}
+
+
+.shimmer-card {
+    height: 338px;
+    background-color: var(--elements-color);
+}
+
+.shimmer-card .flag-container {
+    background-color: var(--shimmer-color);
+}
+
+.shimmer-card .card-title {
+    height: 32px;
+    background-color: var(--shimmer-color);
+    border-radius: 4px;
+}
+
+.shimmer-card p {
+    height: 22px;
+    border-radius: 4px;
+    background-color: var(--shimmer-color);
+}
+
+.shimmer-card p:last-child {
+    width: 60%;
+}
+
+/* @@@@@@ */
+
+  /* General styling for country cards */
+.countries-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  
+  /* Animation for country cards */
+  .country-card-wrapper {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Loading shimmer effect */
+  .country-card-wrapper {
+    opacity: 1; /* Ensure it's visible when loading */
+  }
+  
+  .countries-container .country-card-wrapper {
+    animation: fadeInUp 0.5s ease-out forwards;
+  }
+  
+  /* Pagination (Optional) */
+  .pagination-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  .pagination-controls button {
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    background-color: #fff;
+    color: #007bff;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .pagination-controls button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  .pagination-controls button:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .pagination-controls .active {
+    font-weight: bold;
+    background-color: #007bff;
+    color: #fff;
+  }
+  
